@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Songs</title>
+</head>
+<body>
+<a href="/songs"><button>DashBoard</button></a>
+Others who added <%=@song.artist%> - <%=@song.title%>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Times added</th>
+	</tr>
+	<%if @add%>
+	<% @add.each do |ad| %>
+	<tbody>
+		<tr>
+			<td><a href="/users/<%=ad.user_id%>"> <%=ad.user.first_name%></a></td>
+			<td><%=ad.count%></td>
+		</tr>
+	</tbody>
+	<%end%>
+	<%end%>
+</table>
+
+</body>
+</html>

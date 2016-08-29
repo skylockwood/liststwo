@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<a href="/songs"><button>DashBoard</button></a>
+<h3><%=@user.first_name%> <%=@user.last_name%>'s Playlist</h3>
+
+<table>
+	<tr>
+		<th>Artist</th>
+		<th>Title</th>
+		<th>Times Added</th>
+	</tr>
+	<%if @adds%>
+	<% @adds.each do |add|%>
+	<tbody>
+		<tr>
+			<td><%=add.song.artist%></td>
+			<td><%=add.song.title%></td>
+			<td><%=add.count%></td>
+		</tr>
+	</tbody>
+	<%end%>
+	<%end%>
+</table>
+</body>
+</html>
